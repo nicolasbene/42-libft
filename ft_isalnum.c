@@ -6,7 +6,7 @@
 /*   By: nibenoit <nibenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 22:34:38 by nibenoit          #+#    #+#             */
-/*   Updated: 2022/11/03 22:47:01 by nibenoit         ###   ########.fr       */
+/*   Updated: 2022/11/10 19:13:35 by nibenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int	ft_isalnum(int c)
 {
 	if (ft_isdigit(c) == 1 || ft_isalpha(c) == 1)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
