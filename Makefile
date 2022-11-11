@@ -6,7 +6,7 @@
 #    By: nibenoit <nibenoit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:22:26 by nibenoit          #+#    #+#              #
-#    Updated: 2022/11/11 17:02:32 by nibenoit         ###   ########.fr        #
+#    Updated: 2022/11/11 20:12:25 by nibenoit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,12 +65,15 @@ all: ${NAME}
 ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
 
+bonus: ${OBJS} ${OBJSBONUS}
+	${AR} ${NAME} ${OBJS} ${OBJSBONUS}
+
 .o: .c
 	${CC} -c ${CFLAGS} $< -o $@
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) ${SRCSBONUS}
+	gcc -nostartfiles -shared -o libft.so $(OBJS) ${OBJSBONUS}
 
 clean:
 	rm -f ${OBJS} ${OBJSBONUS}
