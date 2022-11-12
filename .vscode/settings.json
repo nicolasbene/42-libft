@@ -1,6 +1,8 @@
 {
     "editor.insertSpaces": false,
     "files.associations": {
-        "libft.h": "c"
+        "libft.h": "c",
+        "check.hpp": "c",
+        "stdint.h": "c"
     }
 }
