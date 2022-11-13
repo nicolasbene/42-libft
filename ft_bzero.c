@@ -6,7 +6,7 @@
 /*   By: nibenoit <nibenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:45:53 by nibenoit          #+#    #+#             */
-/*   Updated: 2022/11/13 15:26:49 by nibenoit         ###   ########.fr       */
+/*   Updated: 2022/11/13 15:30:15 by nibenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_bzero(void *ptr, size_t size)
 {
 	char	*temp;
 
-	temp = (char *) ptr;
+	temp = (char *)ptr;
 	while (size--)
 		temp[size] = 0;
 }
