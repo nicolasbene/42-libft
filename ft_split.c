@@ -6,7 +6,7 @@
 /*   By: nibenoit <nibenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:26:42 by nibenoit          #+#    #+#             */
-/*   Updated: 2022/11/12 17:16:26 by nibenoit         ###   ########.fr       */
+/*   Updated: 2022/11/13 15:07:26 by nibenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	ret[a] = '\0';
+	ret[a] = 0;
 	return (ret);
 }
