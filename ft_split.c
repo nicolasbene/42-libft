@@ -6,7 +6,7 @@
 /*   By: nibenoit <nibenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:26:42 by nibenoit          #+#    #+#             */
-/*   Updated: 2022/11/13 15:07:26 by nibenoit         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:26:03 by nibenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,29 @@ static char	*cpywrd(char const *s, char c)
 		len++;
 	wrd = malloc(sizeof(char) * (len + 1));
 	if (!wrd)
+	{
+		free(wrd);
 		return (NULL);
+	}
 	ft_memcpy(wrd, s, len);
 	wrd[len] = '\0';
 	return (wrd);
+}
+
+void	*free_and_return(char **tab)
+{
+	int	i;
+
+	if (!(tab))
+		return (NULL);
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -64,7 +83,7 @@ char	**ft_split(char const *s, char c)
 		{
 			ret[a] = cpywrd(s + i, c);
 			if (!ret[a++])
-				return (NULL);
+				return (free_and_return(ret));
 			while (s[i + 1] && s[i + 1] != c)
 				i++;
 		}
